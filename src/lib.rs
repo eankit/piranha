@@ -139,12 +139,12 @@ impl Piranha {
     parser
       .set_language(*self.rule_store.piranha_args().piranha_language().language())
       .expect("Could not set the language for the parser.");
-
+    info!("\n # setting languate {}", self.rule_store.piranha_args().piranha_language().language());
     // Keep looping until new `global` rules are added.
     loop {
       let current_rules = self.rule_store.global_rules().clone();
 
-      debug!("\n # Global rules {}", current_rules.len());
+      info!("\n # Global rules {}", current_rules.len());
       // Iterate over each file containing the usage of the feature flag API
 
       for (path, content) in self.rule_store.get_relevant_files(&self.path_to_codebase) {

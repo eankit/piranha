@@ -84,7 +84,7 @@ impl RuleStore {
       "Number of rules and edges loaded : {:?}",
       rule_store.rule_graph.get_number_of_rules_and_edges()
     );
-    trace!("Rule Store {}", format!("{:#?}", rule_store));
+    info!("Rule Store {}", format!("{:#?}", rule_store));
     rule_store
   }
 
@@ -104,7 +104,7 @@ impl RuleStore {
       }) {
         r.add_grep_heuristics_for_global_rules(tag_captures);
         #[rustfmt::skip]
-        debug!("{}", format!("Added Global Rule : {:?} - {}", r.name(), r.query()).bright_blue());
+        info!("{}", format!("Added Global Rule : {:?} - {}", r.name(), r.query()).bright_blue());
         self.global_rules.push(r);
       }
     }
