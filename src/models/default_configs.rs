@@ -22,6 +22,7 @@ pub const PYTHON: &str = "py";
 pub const SWIFT: &str = "swift";
 pub const TYPESCRIPT: &str = "ts";
 pub const TSX: &str = "tsx";
+pub const SCALA: &str = "scala";
 
 pub fn default_number_of_ancestors_in_parent_scope() -> u8 {
   4
